@@ -12,8 +12,12 @@ struct ContentView: View {
   var body: some View {
         
       VStack {
+        
+        Spacer()
+        
         if answerNumber == 0 {
             Text("これからじゃんけんをします")
+                .padding(.bottom)
         } else if answerNumber == 1 {
             // グーの画像指定
             Image("gu")
@@ -21,20 +25,29 @@ struct ContentView: View {
                 .resizable()
                 //画面に収まるようにアスペクト比を維持す定
                 .aspectRatio(contentMode: .fit)
+            
+        Spacer()
             //じゃんけんの種類を指定
             Text("グー")
+                .padding(.bottom)
             
         } else if answerNumber == 2 {
             Image("choki")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("チョキ")
+        
+        Spacer()
             
+            Text("チョキ")
+                .padding(.bottom)
         } else {
             Image("pa")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            
+        Spacer()
             Text("パー")
+                .padding(.bottom)
             
         }
             // じゃんけんをするボタン！！
@@ -51,6 +64,11 @@ struct ContentView: View {
             }) {
                 // ボタンに表示する文字を指定
                 Text("じゃんけんをする")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .font(.title)
+                    .background(Color.pink)
+                    .foregroundColor(.white)
             }
         }
     }
