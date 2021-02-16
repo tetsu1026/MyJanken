@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var answerNumber = 0
   var body: some View {
         
       VStack {
+        if answerNumber == 0 {
+            Text("これからじゃんけんをします")
+        } else if answerNumber == 1 {
+            
+        } else if answerNumber == 2 {
+            
+        } else {
+            
+        }
             // グーの画像指定
             Image("gu")
                 // リサイズを指定
